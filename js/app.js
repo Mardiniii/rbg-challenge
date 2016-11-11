@@ -29,8 +29,10 @@ function guess() {
 
   // Verifies answer
   if ( index == correct ) {
+    $('.result.won').show();
     score++;
   } else {
+    $('.result.lost').show();
     score = 0;
   }
   $('.score span').text(score);
