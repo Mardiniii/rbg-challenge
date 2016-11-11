@@ -1,9 +1,23 @@
-// Generar colores de forma aleatoria
-$('.option').each(function() {
-  var r = Math.floor(Math.random() * 255);
-  var g = Math.floor(Math.random() * 255);
-  var b = Math.floor(Math.random() * 255);
+// Define correct option
+var correct = Math.floor(Math.random() * 2);
 
-  var color = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+// Generates Random Colors
+$('.option').each(function(index) {
+  var color = generateColor();
   $(this).css('background-color', color);
+
+  // Change answer copy
+  if ( index == correct ) {
+    $('.question').text(color);
+  }
 });
+
+// Returns a number between 0 and 255
+function random() {
+  return Math.floor(Math.random() * 255);
+}
+
+// Returns a random rgb color string
+function generateColor() {
+  return 'rgb(' + random() + ', ' + random() + ', ' + random() + ')';
+}
