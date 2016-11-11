@@ -34,3 +34,10 @@ body {
 .option.scale {
   transform: scale(46);
 }
+
+.result {
+  display: none;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
