@@ -19,6 +19,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
   margin: 20px 15px;
+  transition: all 0.45s ease;
 }
 
 .question {
@@ -28,4 +29,8 @@ body {
 .score {
   margin: 40px;
   font-size: 24px;
+}
+
+.option.scale {
+  transform: scale(46);
 }

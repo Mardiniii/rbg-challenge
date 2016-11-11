@@ -24,6 +24,7 @@ function game() {
 }
 
 function guess() {
+  $(this).addClass('scale');
   var index = $('.option').index(this);
 
   // Verifies answer
