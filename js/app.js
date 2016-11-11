@@ -1,8 +1,28 @@
-// Define correct option
-var correct = Math.floor(Math.random() * 2);
+var correct;
 
-// Binding a click color
-$('.option').on('click', function() {
+// Initialize first game
+game();
+
+// Binding a click color to guess function
+$('.option').on('click', guess);
+
+function game() {
+  // Define correct option
+  correct = Math.floor(Math.random() * 2);
+
+  // Generates Random Colors
+  $('.option').each(function(index) {
+    var color = generateColor();
+    $(this).css('background-color', color);
+
+    // Change answer copy
+    if ( index == correct ) {
+      $('.question').text(color);
+    }
+  });
+}
+
+function guess() {
   var index = $('.option').index(this);
 
   // Verifies answer
@@ -11,18 +31,9 @@ $('.option').on('click', function() {
   } else {
     alert("Fallaste!!!!!");
   }
-});
 
-// Generates Random Colors
-$('.option').each(function(index) {
-  var color = generateColor();
-  $(this).css('background-color', color);
-
-  // Change answer copy
-  if ( index == correct ) {
-    $('.question').text(color);
-  }
-});
+  game();
+}
 
 // Returns a number between 0 and 255
 function random() {
