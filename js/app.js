@@ -1,4 +1,5 @@
 var correct;
+var score = 0;
 
 // Initialize first game
 game();
@@ -27,10 +28,11 @@ function guess() {
 
   // Verifies answer
   if ( index == correct ) {
-    alert("Muy bien!!!!!!!");
+    score++;
   } else {
-    alert("Fallaste!!!!!");
+    score = 0;
   }
+  $('.score span').text(score);
 
   game();
 }
