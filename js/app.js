@@ -6,6 +6,12 @@ game();
 
 // Binding a click color to guess function
 $('.option').on('click', guess);
+$('.close a').on('click', function() {
+  $('.result').hide();
+  $('.option').removeClass('scale');
+
+  game();
+});
 
 function game() {
   // Define correct option
@@ -36,8 +42,6 @@ function guess() {
     score = 0;
   }
   $('.score span').text(score);
-
-  game();
 }
 
 // Returns a number between 0 and 255
