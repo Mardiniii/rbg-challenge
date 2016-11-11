@@ -5,6 +5,12 @@ body {
   font-family: 'Inconsolata';
 }
 
+.question-container {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+}
+
 .option {
   display: inline-block;
   background-color: white;
@@ -12,4 +18,14 @@ body {
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
+  margin: 20px 15px;
+}
+
+.question {
+  font-size: 28px;
+}
+
+.score {
+  margin: 40px;
+  font-size: 24px;
 }
